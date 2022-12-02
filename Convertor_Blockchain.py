@@ -5,6 +5,8 @@ import requests, json
 
 # Convert Private key to Wallet Import Format (WI
 
+found = 0
+count = 0
 # import all key from text file
 filename = "PrivateKey_10M_Nov_2022.txt"
 with open(filename, 'r', encoding='utf-8', errors='ignore') as fr:
@@ -16,4 +18,13 @@ with open(filename, 'r', encoding='utf-8', errors='ignore') as fr:
         addr = Private_Key.address
         req = requests.get("https://blockchain.info/balance?active=" + addr).json()
         balance = dict(req)[addr]['final_balance']
-        print(addr, balance)
+        count += 1
+        if int(balance) > 0:
+            found += 1
+            with open('FoundValue.txt', 'a') as vf:
+                vf.write(f"{addr}        Balance: {balance}\n{Private_Key}\n{'=' * 55}\n")
+                vf.close()
+        else:
+            
+            print(f"{count} Address: {addr} # Balance: {balance}\n{Private_Key}")
+            
