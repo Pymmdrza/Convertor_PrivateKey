@@ -30,7 +30,7 @@ with open(filename, 'r', encoding='utf-8', errors='ignore') as fr:
         if balance != iffer:
             found += 1
             with open('FoundValue.txt', 'a') as vf:
-                vf.write(f"{addr}        Balance: {balance}\n{PrivateKey}\n{'=' * 55}\n")
+                vf.write(f"{addr}        Balance: {balance}\n{Privatekey}\n{'=' * 55}\n")
                 vf.close()
         else:
 
