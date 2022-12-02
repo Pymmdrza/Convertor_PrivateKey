@@ -1,5 +1,5 @@
 # Convert All Private key to bitcoin address (p2pkh) and check just value balance from blockchain
-# first install : pip install bit [Linux : pip3 install bit]
+# first install : pip install bit [Linux : pip3 install bit lxml]
 from bit import Key
 import requests, json
 
