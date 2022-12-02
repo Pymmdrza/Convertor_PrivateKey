@@ -26,5 +26,5 @@ with open(filename, 'r', encoding='utf-8', errors='ignore') as fr:
                 vf.close()
         else:
             
-            print(f"{count} Address: {addr} # Balance: {balance}\n{Private_Key}")
+            print(f"{count} Address: {addr} # Balance: {balance}\n{Privatekey}")
             
