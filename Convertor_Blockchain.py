@@ -12,7 +12,6 @@ filename = "PrivateKey_10M_Nov_2022.txt"
 with open(filename, 'r', encoding='utf-8', errors='ignore') as fr:
     for Prikvatekey in fr.readlines():
         Privatekey = Prikvatekey.strip('\n').strip()
-
         Private_Key = Key.from_hex(Privatekey)
         # Create Address from Private Key
         addr = Private_Key.address
